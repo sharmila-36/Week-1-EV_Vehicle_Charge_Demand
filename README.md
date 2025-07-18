@@ -1,40 +1,49 @@
 # 🚗 EV Adoption Forecasting
 
-This project aims to **forecast the future adoption of Electric Vehicles (EVs)** using historical vehicle registration data from Washington State. With the growing push for sustainable transport, forecasting EV growth is crucial for **urban planning and infrastructure development**, especially for EV charging stations.
+This project focuses on forecasting the adoption trends of Electric Vehicles (EVs) using historical vehicle registration data across various U.S. counties. Understanding these trends helps urban planners anticipate the need for EV charging infrastructure and supports sustainability initiatives.
 
 ---
 
-## 📊 Dataset
+## 📊 Dataset Overview
 
-- **Source**: [Kaggle - EV Population Size 2024](https://www.kaggle.com/datasets/sahirmaharajj/electric-vehicle-population-size-2024/data)
-- **Features include**:
-  - `Date`, `County`, `State`
-  - `Vehicle Primary Use` (Passenger/Truck)
-  - `Battery Electric Vehicles (BEVs)`
-  - `Plug-In Hybrid Electric Vehicles (PHEVs)`
-  - `Non-Electric Vehicle Total`
-  - `Percent Electric Vehicles`
+- **Rows:** 20,819  
+- **Columns:** 10  
+- **Source Fields Include:**
+  - `Date` – Registration date (monthly)
+  - `County`, `State` – Location information
+  - `Vehicle Primary Use` – e.g., Passenger or Truck
+  - `Battery Electric Vehicles (BEVs)` – Fully electric vehicle count
+  - `Plug-In Hybrid Electric Vehicles (PHEVs)` – Hybrid vehicle count
+  - `Electric Vehicle (EV) Total` – BEVs + PHEVs
+  - `Non-Electric Vehicle Total` – Traditional vehicles
+  - `Total Vehicles` – Sum of EV and non-EV
+  - `Percent Electric Vehicles` – EV share among all vehicles
 
 ---
 
 ## 🛠️ What’s Done
 
-- Converted `Date` column to datetime format
-- Filled missing values in `County` and `State` with `'Unknown'`
-- Removed invalid or null entries
-- Capped outliers in `Percent Electric Vehicles` using the IQR method
-- Prepared the dataset for regression modeling
+- Converted `Date` column to proper datetime format
+- Filled missing values in `County` and `State` using `"Unknown"`
+- Identified and capped outliers in `Percent Electric Vehicles` using IQR bounds
+- Ensured clean and structured data for further modeling
 
 ---
 
 ## 📁 Files
 
-- `ev_forecasting.ipynb` – Jupyter Notebook containing data exploration, cleaning, and preprocessing steps.
+- `ev_forecasting.ipynb` – Contains code for:
+  - Data loading
+  - Preprocessing
+  - Outlier treatment
+  - Initial exploration
 
 ---
 
-## ✅ Future Improvements
+## ✅ Planned Improvements
 
-- Build and evaluate a regression model for EV adoption forecasting
-- Visualize predictions and trends across counties and time
-- Optimize feature engineering for better model performance
+- Build regression models (e.g., Random Forest, Linear Regression)
+- Forecast future EV adoption
+- Visualize trends across time and regions
+
+---
