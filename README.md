@@ -1,33 +1,40 @@
-# Week-1-EV_Vehicle_Charge_Demand
-🚗 EV Adoption Forecasting
-This project aims to forecast the future adoption of Electric Vehicles (EVs) using historical vehicle registration data from Washington State. With the growing push for sustainable transport, forecasting EV growth is crucial for urban planning and infrastructure development, especially for EV charging stations.
+# 🚗 EV Adoption Forecasting
 
-📊 Dataset
-Source: Kaggle - EV Population Size 2024
+This project aims to **forecast the future adoption of Electric Vehicles (EVs)** using historical vehicle registration data from Washington State. With the growing push for sustainable transport, forecasting EV growth is crucial for **urban planning and infrastructure development**, especially for EV charging stations.
 
-Features include:
+---
 
-Date, County, State
+## 📊 Dataset
 
-Vehicle type (Passenger/Truck)
+- **Source**: [Kaggle - EV Population Size 2024](https://www.kaggle.com/datasets/sahirmaharajj/electric-vehicle-population-size-2024/data)
+- **Features include**:
+  - `Date`, `County`, `State`
+  - `Vehicle Primary Use` (Passenger/Truck)
+  - `Battery Electric Vehicles (BEVs)`
+  - `Plug-In Hybrid Electric Vehicles (PHEVs)`
+  - `Non-Electric Vehicle Total`
+  - `Percent Electric Vehicles`
 
-BEVs, PHEVs, Non-Electric counts
+---
 
-Percent of EVs vs non-EVs
+## 🛠️ What’s Done
 
-🛠️ What’s Done
-Data cleaning (date conversion, handling nulls)
+- Converted `Date` column to datetime format
+- Filled missing values in `County` and `State` with `'Unknown'`
+- Removed invalid or null entries
+- Capped outliers in `Percent Electric Vehicles` using the IQR method
+- Prepared the dataset for regression modeling
 
-Capped outliers in Percent Electric Vehicles using IQR
+---
 
-Prepared the dataset for modeling (further modeling steps may follow)
+## 📁 Files
 
-📁 Files
-ev_forecasting.ipynb – main notebook containing the analysis and data preprocessing steps.
+- `ev_forecasting.ipynb` – Jupyter Notebook containing data exploration, cleaning, and preprocessing steps.
 
-✅ Future Improvements
-Implement regression model to forecast EV counts
+---
 
-Evaluate and compare model performance
+## ✅ Future Improvements
 
-Visualize trends and prediction confidence
+- Build and evaluate a regression model for EV adoption forecasting
+- Visualize predictions and trends across counties and time
+- Optimize feature engineering for better model performance
